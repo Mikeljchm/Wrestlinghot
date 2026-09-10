@@ -1,126 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HottWrestling | Exclusive Gallery</title>
-  <meta name="description" content="The official gallery of HottWrestling. Male beauty, action, and exclusive content." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>HOTT WRESTLING · Feel the Heat</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="app">
+    <canvas id="fire-canvas"></canvas>
+    <div class="flare-overlay" id="flare-overlay"></div>
 
-  <!-- ===== HEADER (Glassmorphism) ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo">
-        HOTT<span>WRESTLING</span>
-      </a>
-      <nav class="nav">
-        <a href="#galleries">Galleries</a>
-        <a href="#videos">Videos</a>
-        <a href="#about">About</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Menu">☰</button>
+    <div id="age-overlay">
+      <h2>CAN YOU TAKE THE HEAT?</h2>
+      <p class="sub">Adult content. 18+ only.<br>Things are about to get very hot.</p>
+      <button class="btn-enter" id="btn-enter">I'M 18+ · WARM ME UP</button>
+      <button class="btn-no" id="btn-no">Leave</button>
     </div>
-  </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <!-- Puedes cambiar esta imagen por una tuya más adelante -->
-    <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2000&auto=format&fit=crop');"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <p class="hero-kicker animate-up">EXCLUSIVE CONTENT</p>
-      <h1 class="hero-title animate-up delay-1">UNLEASH<br /><span>THE HEAT</span></h1>
-      <p class="hero-sub animate-up delay-2">Step inside the ring. A curated collection of male beauty, intense action, and behind-the-scenes moments.</p>
-      <div class="hero-actions animate-up delay-3">
-        <a href="#galleries" class="btn btn-primary">Explore Galleries</a>
-        <a href="#videos" class="btn btn-ghost">Watch Videos</a>
-      </div>
-    </div>
-  </section>
+    <div id="main-content">
+      <section class="hero">
+        <h1><span class="hot">HOT</span> WRESTLING</h1>
+        <p class="tagline">WHERE THE HEAT RISES</p>
+      </section>
 
-  <!-- ===== GALLERIES ===== -->
-  <section id="galleries" class="section">
-    <div class="container">
-      <div class="section-head animate-up">
-        <h2>Galleries</h2>
-        <p>Browse by collection</p>
-      </div>
-      <div class="gallery-grid">
-        <a href="#" class="gallery-card animate-up">
-          <div class="gallery-thumb" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop')"></div>
-          <div class="gallery-info">
-            <h3>Ring Action</h3>
-            <span>24 Photos</span>
-          </div>
+      <section class="heat-zone">
+        <p class="zone-label">The Hottest Room</p>
+        <a href="#" class="btn-heat-zone" id="btn-heat-zone">
+          <img src="https://hottwrestling.b-cdn.net/RSS/pngwing.com%20(2).png" alt="Telegram" class="tg-icon">
+          Turn Up the Heat
         </a>
-        <a href="#" class="gallery-card animate-up delay-1">
-          <div class="gallery-thumb" style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop')"></div>
-          <div class="gallery-info">
-            <h3>Backstage</h3>
-            <span>12 Photos</span>
-          </div>
-        </a>
-        <a href="#" class="gallery-card animate-up delay-2">
-          <div class="gallery-thumb" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop')"></div>
-          <div class="gallery-info">
-            <h3>Training</h3>
-            <span>8 Photos</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+        <p class="zone-hint">Private channel · Uncensored · Temperature rising</p>
+      </section>
 
-  <!-- ===== VIDEOS ===== -->
-  <section id="videos" class="section section-dark">
-    <div class="container">
-      <div class="section-head animate-up">
-        <h2>Videos</h2>
-        <p>Latest in motion</p>
-      </div>
-      <div class="video-grid">
-        <div class="video-card animate-up">
-          <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800&auto=format&fit=crop')">
-            <span class="play-icon">▶</span>
+      <section class="carousel-section">
+        <h2 class="carousel-title">Scorching Moments</h2>
+        <div class="heat-stage">
+          <div class="heat-main" id="heat-main">
+            <img src="" alt="Hot shot" id="heat-main-img">
+            <div class="heat-main-caption" id="heat-main-caption"></div>
           </div>
-          <h3>Match Highlights</h3>
         </div>
-        <div class="video-card animate-up delay-1">
-          <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=800&auto=format&fit=crop')">
-            <span class="play-icon">▶</span>
-          </div>
-          <h3>Exclusive Interview</h3>
+        <div class="heat-thumbs-wrapper" id="heat-thumbs-wrapper">
+          <div class="heat-thumbs" id="heat-thumbs"></div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="section">
-    <div class="container about animate-up">
-      <h2>About</h2>
-      <p>Welcome to the official home of HottWrestling. A space dedicated to the art of wrestling, celebrating strength, aesthetics, and the raw energy of the sport.</p>
-      <p>Follow us on <a href="https://instagram.com/hottwrestling" target="_blank">Instagram</a> for daily content.</p>
-    </div>
-  </section>
+      <section class="hot-spots-section">
+        <h3 class="spots-title">Other Hot Spots</h3>
+        <div class="spots-grid">
+          <a href="https://www.facebook.com/share/1K1tch2Yzg/" target="_blank" class="spot-link external-link"><img src="https://hottwrestling.b-cdn.net/RSS/pngwing.com%20(4).png" alt="FB"><span>FB</span></a>
+          <a href="https://www.instagram.com/hott_wrestling?igsh=MWF6bjQ4bG1uYjdvMw==" target="_blank" class="spot-link external-link"><img src="https://hottwrestling.b-cdn.net/RSS/pngwing.com%20(3).png" alt="IG"><span>IG</span></a>
+          <a href="https://youtube.com/@hottwrestling?si=Dwp_dPibgoYYucaN" target="_blank" class="spot-link external-link"><img src="https://hottwrestling.b-cdn.net/RSS/pngwing.com%20(5).png" alt="YT"><span>YT</span></a>
+          <a href="#" class="spot-link" id="spot-tg"><img src="https://hottwrestling.b-cdn.net/RSS/pngwing.com%20(2).png" alt="TG"><span>TG</span></a>
+          <a href="https://www.tiktok.com/@hot_wrestling?_r=1&_t=ZS-966O2yFWxTl" target="_blank" class="spot-link external-link"><img src="https://hottwrestling.b-cdn.net/RSS/pngwing.com%20(7).png" alt="TT"><span>TT</span></a>
+        </div>
+      </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> HottWrestling. All rights reserved.</p>
-      <div class="socials">
-        <a href="https://instagram.com/hottwrestling" target="_blank">Instagram</a>
-      </div>
+      <footer class="site-footer">© HOTT WRESTLING · GRAPPLING ISN'T GAY · FEEL THE HEAT</footer>
     </div>
-  </footer>
+
+    <div class="fire-toggle" id="fire-toggle" title="Toggle Music / Slide to adjust volume">
+      <img src="https://hottwrestling.b-cdn.net/RSS/pngwing.com%20(6).png" alt="Volume">
+    </div>
+    <div class="volume-indicator" id="volume-indicator">Vol: 45%</div>
+    <div class="audio-error-toast" id="audio-error-toast">⚠️ Music link broken. Check the MP3/M4A URL.</div>
+
+    <div class="lightbox" id="lightbox">
+      <span class="close-btn" id="close-lightbox">&times;</span>
+      <button class="lightbox-nav-btn prev" id="lightbox-prev">◀</button>
+      <button class="lightbox-nav-btn next" id="lightbox-next">▶</button>
+      <img src="" alt="Hot shot" id="lightbox-img">
+      <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+  </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function() {
+      const imageUrls = [
+        'https://hottwrestling.b-cdn.net/Hottwrestling/_.PNG',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/1(5).PNG',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/15E03EE6-944F-43EC-9DF4-F36BBBB29D95.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/2(1).png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/20251012_215437.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/2189B329-04FE-427D-8C8F-FFCC22E7BD35.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/23E8E363-7C26-43F7-8645-6AEBA66A9CF3.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/244992671_922775701920852_3115032834133693459_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/3(4).png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/31D7EA90-23E2-44EE-AEDC-0D43D6EEF909.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/384496439_635727958709716_3987147177917797510_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/393593692_1413016575917716_5216806975969101808_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/393598738_238208805919152_3932628323800831587_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/393981172_1081230672868363_5738869410742561061_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/393993051_18277548442156346_1350912703148975673_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/394273042_18392602711007075_6454266520767255885_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/394321689_861202102194987_7623382379266598678_n.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/4(1).PNG',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/44.PNG',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/458452886_393222133548645_3332510985054255623_n-2.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/458917875_2532069150315627_8703235614937505658_n-2.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/479bb9e3-16b0-46bb-be0e-42478471b0dc.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/61ed052a-6c09-46c3-a280-288a4fb1f803.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/650E55BA-F26A-476F-89DB-ABC4CAFB8A94.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/7561BC91-2CC7-4F62-B699-6D7016B9CACB.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/7A5729A0-7AA7-4A85-88CB-51764B228643.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/7y.png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/867A2695-B85D-40A3-9449-25641B6D6A8D.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/87FC933E-5792-440A-BF11-B24FD480DE59.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/A91345E6-7B77-408F-801F-CD3A4F04FB9F.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/AhZEsKr.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/albin%202(1).png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Austin%20Oconnor.png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/austin(1).jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/B9B8B2C5-AAAF-4935-9D42-33F3804AE001.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/blaine.brenner-14-10-2023-0002.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/blaine.brenner-14-10-2023-0004.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/blaine.brenner-14-10-2023-0006.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/brockport06.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/brockport08.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/C7A348D2-FB1F-42DD-8FC5-2A7D3DC41D0E.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/coleman%20sword.png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/concordia-university-ne-wrestling-v0-hfo3dh8thzyd1.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/E9216F28-7A0A-4B17-8254-3508F9D78B9D.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/F44DD3A9-B20E-4B08-927F-0EB9BBB1E5A2.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/fit%3D1280%20(14).jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/fit%3D1280%20(17).jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/fit%3D1280%20(18).jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Free%20smoke%20%F0%9F%92%A8%20Year%202%20(1).jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Free%20smoke%20%F0%9F%92%A8%20Year%202%20(5).jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Free%20smoke%20%F0%9F%92%A8%20Year%202%20(9).jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Free%20smoke%20%F0%9F%92%A8%20Year%202.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Harvard2.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/i-27wmWhF222.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/i-3V3ccQR66.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/I3ct9nb8x6U(1).jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/IMG_0224.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/IMG_0225.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/IMG_0226.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/IMG_0228.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/IMG_0229.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/IMG_20240301_202726_912_014902.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/IMG_2945.PNG',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/jadin%201.png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/LRT00002.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/LRT00003.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/LRT00004.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/LRT00005.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Nico%20Megaludis.png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/ryan%20deakin%2010.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/ryan%20deakin%2011.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/ryan%20deakin%208.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/ryan%20deakin%209.jpeg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Screen%20Shot%202021-05-27%20at%209.44.15%20AM(1).png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Screen%20Shot%202021-09-13%20at%203.00.07%20PM.png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Screen%20Shot%202021-09-13%20at%203.02.30%20PM.png',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Screenshot_20220307-223549_Instagram.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Sir%2C%20yes%20sir%20%23collegewrestling%20(1).jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/Sir%2C%20yes%20sir%20%23collegewrestling.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_058283ffd1ce3d47f69fec08881365c9_648536ac_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_391cd305735785592ce8b1ef28957d6d_cb73c75f_640.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_3b675173c34cfecc8d0bc980dd9b981b_5420f26f_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_3efcafff2dcc811dffdf682b87b8ffca_448697d6_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_4fd14c2233073419b515531d615d2b31_23b56ef8_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_57188b3d07198456d8b9309cfd3edad0_dc057828_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_572ce895653c41631c36b59abe9aa594_1e4b1905_1280_031848.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_5d16c7f94defd70db4b057d0f17baa0c_e05112b8_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_5f9af14e4752afea761cff7904284954_bcbf69b8_1280.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_96aa942f4889c32b20f6f137259f67bf_0400e74a_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_aa2fd44bee495c90a48e292a18f8b43d_7f694d43_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_b2afd59358d831a0687ebd62860dcce1_a4b32a96_1280.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_bec7cc5dfa0dde7d3c4e9344c19bb4a1_7e768661_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_c913d8f7d5c249f1d4c74deee188025f_81849406_540.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_dcb7b39f7a694e67a6da48cd1fa4e93e_e11fa0b3_1280_031839.jpg',
+        'https://hottwrestling.b-cdn.net/Hottwrestling/tumblr_df6a47b864657d3f9e837d5d93187772_a08f736e_540.jpg'
+      ];
+      const captions = [
+        'Tension','Contact','Sweat','Panting','Strength','Domination','Submission','Clash','Grip',
+        'Pressure','Friction','Heat','Intense','Forbidden','Taboo','Secret','Desire','Skin',
+        'Ritual','Passion','Friction','Pulse','Gaze','Whisper','Tremble','Ecstasy','Climax','No Escape'
+      ];
+
+      const flareOverlay = document.getElementById('flare-overlay');
+      const fireToggle = document.getElementById('fire-toggle');
+      const volumeIndicator = document.getElementById('volume-indicator');
+      const errorToast = document.getElementById('audio-error-toast');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCounter = document.getElementById('lightbox-counter');
+
+      // Audio
+      const audio = new Audio();
+      audio.src = 'https://archive.org/download/www.ssvid.net-britney-spears-gimme-more-traducida-al-espanol_128kbps/www.ssvid.net--Britney-Spears-Gimme-More-Traducida-al-Espa%C3%B1ol_128kbps.m4a';
+      audio.loop = true;
+      audio.volume = 0.45;
+      audio.muted = false;
+      let audioStarted = false;
+
+      function updateVolumeUI() {
+        volumeIndicator.textContent = `Vol: ${Math.round(audio.volume * 100)}%`;
+      }
+
+      function startAudio() {
+        if (!audioStarted) {
+          audio.play().then(() => {
+            audioStarted = true;
+            fireToggle.classList.add('playing');
+          }).catch(() => {
+            errorToast.style.display = 'block';
+            setTimeout(() => errorToast.style.display = 'none', 5000);
+          });
+        }
+      }
+
+      function pauseAudio() {
+        if (audioStarted) {
+          audio.pause();
+          audioStarted = false;
+          fireToggle.classList.remove('playing');
+        }
+      }
+
+      function toggleMute() {
+        if (!audioStarted) {
+          startAudio();
+        } else {
+          audio.muted = !audio.muted;
+          fireToggle.classList.toggle('playing', !audio.muted);
+        }
+      }
+
+      function handleExternalLink(event, url) {
+        event.preventDefault();
+        pauseAudio();
+        window.open(url, '_blank');
+      }
+
+      document.getElementById('btn-heat-zone').addEventListener('click', (e) => handleExternalLink(e, 'https://t.me/+cmQn3Ljdmnw4M2Nh'));
+      document.getElementById('spot-tg').addEventListener('click', (e) => handleExternalLink(e, 'https://t.me/+cmQn3Ljdmnw4M2Nh'));
+
+      document.querySelectorAll('.external-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          pauseAudio();
+          window.open(link.href, '_blank');
+        });
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && audioStarted) {
+          pauseAudio();
+        }
+      });
+
+      let touchStartY = 0, touchStartVol = 0, isDragging = false, hasMoved = false;
+      fireToggle.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        touchStartY = e.touches[0].clientY;
+        touchStartVol = audio.volume;
+        isDragging = true;
+        hasMoved = false;
+        volumeIndicator.classList.add('show');
+      });
+      fireToggle.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const delta = touchStartY - e.touches[0].clientY;
+        if (Math.abs(delta) > 5) hasMoved = true;
+        let newVol = touchStartVol + delta / 150;
+        newVol = Math.max(0, Math.min(1, newVol));
+        audio.volume = newVol;
+        updateVolumeUI();
+        if (newVol > 0 && audio.muted) {
+          audio.muted = false;
+          fireToggle.classList.add('playing');
+        } else if (newVol === 0) {
+          audio.muted = true;
+          fireToggle.classList.remove('playing');
+        }
+      });
+      fireToggle.addEventListener('touchend', () => {
+        isDragging = false;
+        volumeIndicator.classList.remove('show');
+        if (!hasMoved) toggleMute();
+        hasMoved = false;
+      });
+
+      function triggerFlare() {
+        flareOverlay.classList.add('active');
+        setTimeout(() => flareOverlay.classList.remove('active'), 300);
+      }
+
+      // Lightbox
+      let currentLightboxIndex = 0;
+      function openLightbox(index) {
+        lightboxImg.src = imageUrls[index];
+        lightboxCounter.textContent = `${index + 1} / ${imageUrls.length}`;
+        lightbox.classList.add('active');
+        currentLightboxIndex = index;
+      }
+      function closeLightbox() { lightbox.classList.remove('active'); }
+      document.getElementById('close-lightbox').addEventListener('click', closeLightbox);
+      document.getElementById('lightbox-prev').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentLightboxIndex = (currentLightboxIndex - 1 + imageUrls.length) % imageUrls.length;
+        lightboxImg.src = imageUrls[currentLightboxIndex];
+        lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${imageUrls.length}`;
+      });
+      document.getElementById('lightbox-next').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentLightboxIndex = (currentLightboxIndex + 1) % imageUrls.length;
+        lightboxImg.src = imageUrls[currentLightboxIndex];
+        lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${imageUrls.length}`;
+      });
+
+      // Parallax
+      let hasGyro = false, gyroGamma = 0, gyroBeta = 0;
+      window.addEventListener('deviceorientation', (e) => {
+        if (e.alpha !== null) {
+          hasGyro = true;
+          gyroGamma = e.gamma; gyroBeta = e.beta;
+        }
+      });
+      setInterval(() => {
+        if (hasGyro && document.getElementById('main-content').classList.contains('visible')) {
+          const img = document.getElementById('heat-main-img');
+          if (img) {
+            const offX = (gyroGamma / 45) * 6;
+            const offY = (gyroBeta / 45) * 6;
+            img.style.transform = `scale(1.08) translate(${offX}px, ${offY}px)`;
+          }
+        }
+      }, 100);
+
+      // Age overlay
+      document.getElementById('btn-enter').addEventListener('click', () => {
+        document.getElementById('age-overlay').classList.add('hidden');
+        document.getElementById('main-content').classList.add('visible');
+        document.body.style.overflow = '';
+        initFireCanvas();
+        initHeatCarousel();
+        startAudio();
+      });
+      document.getElementById('btn-no').addEventListener('click', () => window.location.href = 'about:blank');
+      document.body.style.overflow = 'hidden';
+
+      // Fire canvas
+      function initFireCanvas() {
+        const canvas = document.getElementById('fire-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        resize();
+        window.addEventListener('resize', resize);
+        class Ember {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + Math.random() * 20;
+            this.size = Math.random() * 3 + 1.2;
+            this.speedY = -Math.random() * 1.5 - 0.5;
+            this.speedX = (Math.random() - 0.5) * 0.7;
+            this.opacity = Math.random() * 0.8 + 0.2;
+            this.life = 0; this.maxLife = 100 + Math.random() * 250;
+            this.hue = Math.random() < 0.6 ? 15 : 25;
+          }
+          update() {
+            this.x += this.speedX; this.y += this.speedY; this.life++;
+            this.opacity = Math.max(0, 0.8 * (1 - this.life / this.maxLife));
+            return this.life <= this.maxLife && this.y >= -30;
+          }
+          draw(ctx) {
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+            ctx.fillStyle = `hsla(${this.hue},100%,55%,${this.opacity})`; ctx.fill();
+          }
+        }
+        function animate() {
+          if (document.getElementById('main-content').classList.contains('visible')) {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            if (particles.length < 70 && Math.random() < 0.5) particles.push(new Ember());
+            particles = particles.filter(p => p.update());
+            particles.forEach(p => p.draw(ctx));
+          }
+          requestAnimationFrame(animate);
+        }
+        animate();
+      }
+
+      // Galería
+      let heatIndex = 0;
+      let thumbEls = [];
+
+      function initHeatCarousel() {
+        const main = document.getElementById('heat-main');
+        const mainImg = document.getElementById('heat-main-img');
+        const mainCaption = document.getElementById('heat-main-caption');
+        const thumbs = document.getElementById('heat-thumbs');
+
+        thumbs.innerHTML = '';
+        thumbEls = [];
+
+        imageUrls.forEach((url, i) => {
+          const t = document.createElement('div');
+          t.className = 'heat-thumb' + (i === 0 ? ' active' : '');
+          t.innerHTML = `<img src="${url}" alt="Thumb ${i+1}" loading="lazy">`;
+          t.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToHeat(i);
+          });
+          thumbs.appendChild(t);
+          thumbEls.push(t);
+        });
+
+        mainImg.src = imageUrls[0];
+        mainCaption.textContent = captions[0 % captions.length];
+
+        main.addEventListener('click', () => openLightbox(heatIndex));
+
+        let startX = 0, startY = 0, swiping = false;
+        main.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+          startY = e.touches[0].clientY;
+          swiping = false;
+        }, {passive: true});
+        main.addEventListener('touchmove', (e) => {
+          const dx = Math.abs(e.touches[0].clientX - startX);
+          const dy = Math.abs(e.touches[0].clientY - startY);
+          if (dx > dy && dx > 10) swiping = true;
+        }, {passive: true});
+        main.addEventListener('touchend', (e) => {
+          if (!swiping) return;
+          const diff = e.changedTouches[0].clientX - startX;
+          if (Math.abs(diff) > 40) {
+            diff < 0
+              ? goToHeat((heatIndex + 1) % imageUrls.length)
+              : goToHeat((heatIndex - 1 + imageUrls.length) % imageUrls.length);
+          }
+        });
+      }
+
+      function goToHeat(i) {
+        if (i === heatIndex) return;
+        const newIndex = ((i % imageUrls.length) + imageUrls.length) % imageUrls.length;
+
+        const mainImg = document.getElementById('heat-main-img');
+        const mainCaption = document.getElementById('heat-main-caption');
+
+        mainImg.style.opacity = '0';
+
+        const preloader = new Image();
+        preloader.src = imageUrls[newIndex];
+        preloader.onload = () => {
+          heatIndex = newIndex;
+          mainImg.src = imageUrls[heatIndex];
+          mainCaption.textContent = captions[heatIndex % captions.length];
+          mainImg.style.opacity = '1';
+          mainImg.style.transform = '';
+        };
+        preloader.onerror = () => {
+          heatIndex = newIndex;
+          mainImg.src = imageUrls[heatIndex];
+          mainCaption.textContent = captions[heatIndex % captions.length];
+          mainImg.style.opacity = '1';
+        };
+
+        thumbEls.forEach((t, idx) => t.classList.toggle('active', idx === newIndex));
+
+        const activeThumb = thumbEls[newIndex];
+        if (activeThumb) {
+          activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        triggerFlare();
+      }
+    })();
   </script>
 </body>
 </html> 
