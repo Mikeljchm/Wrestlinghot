@@ -1,74 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HOTTWRESTLING</title>
-  <meta name="description" content="Galería oficial de Hottwrestling. Fotos, videos y más." />
+  <title>HottWrestling | Exclusive Gallery</title>
+  <meta name="description" content="The official gallery of HottWrestling. Male beauty, action, and exclusive content." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== HEADER (Glassmorphism) ===== -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo">
         HOTT<span>WRESTLING</span>
       </a>
       <nav class="nav">
-        <a href="#galerias">Galerías</a>
+        <a href="#galleries">Galleries</a>
         <a href="#videos">Videos</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#about">About</a>
       </nav>
-      <button class="menu-toggle" aria-label="Menú">☰</button>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
     </div>
   </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <!-- Puedes cambiar esta imagen por una tuya más adelante -->
+    <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2000&auto=format&fit=crop');"></div>
+    <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <p class="hero-kicker">GALERÍA OFICIAL</p>
-      <h1 class="hero-title">HOTT<br /><span>WRESTLING</span></h1>
-      <p class="hero-sub">Fotos, videos y todo lo que arde dentro y fuera del ring.</p>
-      <div class="hero-actions">
-        <a href="#galerias" class="btn btn-primary">Ver galerías</a>
-        <a href="#videos" class="btn btn-ghost">Ver videos</a>
+      <p class="hero-kicker animate-up">EXCLUSIVE CONTENT</p>
+      <h1 class="hero-title animate-up delay-1">UNLEASH<br /><span>THE HEAT</span></h1>
+      <p class="hero-sub animate-up delay-2">Step inside the ring. A curated collection of male beauty, intense action, and behind-the-scenes moments.</p>
+      <div class="hero-actions animate-up delay-3">
+        <a href="#galleries" class="btn btn-primary">Explore Galleries</a>
+        <a href="#videos" class="btn btn-ghost">Watch Videos</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== GALERÍAS ===== -->
-  <section id="galerias" class="section">
+  <!-- ===== GALLERIES ===== -->
+  <section id="galleries" class="section">
     <div class="container">
-      <div class="section-head">
-        <h2>Galerías</h2>
-        <p>Explora por colecciones</p>
+      <div class="section-head animate-up">
+        <h2>Galleries</h2>
+        <p>Browse by collection</p>
       </div>
       <div class="gallery-grid">
-        <!-- Placeholder: estas tarjetas luego vendrán de la BD -->
-        <a href="#" class="gallery-card">
-          <div class="gallery-thumb" style="background-image:url('https://picsum.photos/seed/hw1/600/600')"></div>
+        <a href="#" class="gallery-card animate-up">
+          <div class="gallery-thumb" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop')"></div>
           <div class="gallery-info">
-            <h3>Evento #1</h3>
-            <span>24 fotos</span>
+            <h3>Ring Action</h3>
+            <span>24 Photos</span>
           </div>
         </a>
-        <a href="#" class="gallery-card">
-          <div class="gallery-thumb" style="background-image:url('https://picsum.photos/seed/hw2/600/600')"></div>
+        <a href="#" class="gallery-card animate-up delay-1">
+          <div class="gallery-thumb" style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop')"></div>
           <div class="gallery-info">
             <h3>Backstage</h3>
-            <span>12 fotos</span>
+            <span>12 Photos</span>
           </div>
         </a>
-        <a href="#" class="gallery-card">
-          <div class="gallery-thumb" style="background-image:url('https://picsum.photos/seed/hw3/600/600')"></div>
+        <a href="#" class="gallery-card animate-up delay-2">
+          <div class="gallery-thumb" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop')"></div>
           <div class="gallery-info">
-            <h3>Entrenamiento</h3>
-            <span>8 fotos</span>
+            <h3>Training</h3>
+            <span>8 Photos</span>
           </div>
         </a>
       </div>
@@ -78,39 +79,40 @@
   <!-- ===== VIDEOS ===== -->
   <section id="videos" class="section section-dark">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head animate-up">
         <h2>Videos</h2>
-        <p>Lo último en movimiento</p>
+        <p>Latest in motion</p>
       </div>
       <div class="video-grid">
-        <div class="video-card">
-          <div class="video-thumb" style="background-image:url('https://picsum.photos/seed/hwv1/800/450')">
+        <div class="video-card animate-up">
+          <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800&auto=format&fit=crop')">
             <span class="play-icon">▶</span>
           </div>
-          <h3>Título del video</h3>
+          <h3>Match Highlights</h3>
         </div>
-        <div class="video-card">
-          <div class="video-thumb" style="background-image:url('https://picsum.photos/seed/hwv2/800/450')">
+        <div class="video-card animate-up delay-1">
+          <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=800&auto=format&fit=crop')">
             <span class="play-icon">▶</span>
           </div>
-          <h3>Título del video</h3>
+          <h3>Exclusive Interview</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SOBRE ===== -->
-  <section id="sobre" class="section">
-    <div class="container about">
-      <h2>Sobre Hottwrestling</h2>
-      <p>Espacio oficial con lo mejor de la acción. Sígueme también en <a href="https://instagram.com/hottwrestling" target="_blank">@hottwrestling</a>.</p>
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container about animate-up">
+      <h2>About</h2>
+      <p>Welcome to the official home of HottWrestling. A space dedicated to the art of wrestling, celebrating strength, aesthetics, and the raw energy of the sport.</p>
+      <p>Follow us on <a href="https://instagram.com/hottwrestling" target="_blank">Instagram</a> for daily content.</p>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Hottwrestling</p>
+      <p>© <span id="year"></span> HottWrestling. All rights reserved.</p>
       <div class="socials">
         <a href="https://instagram.com/hottwrestling" target="_blank">Instagram</a>
       </div>
@@ -121,4 +123,4 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
+</html> 
